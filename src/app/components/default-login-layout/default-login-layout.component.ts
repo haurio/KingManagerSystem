@@ -11,23 +11,31 @@ import { CommonModule } from '@angular/common';
 export class DefaultLoginLayoutComponent {
   currentYear: number = new Date().getFullYear();
   isModalVisible: boolean = false; // Variável para controlar a visibilidade do modal
+  isSuccessPopupVisible: boolean = false; // Variável para controlar a visibilidade do popup de sucesso
 
-  // Função para abrir o modal de registro
   openRegisterModal(): void {
     this.isModalVisible = true;
-    console.log('Modal aberto', this.isModalVisible); // Log para debug
   }
 
-  // Função para fechar o modal de registro
   closeRegisterModal(): void {
     this.isModalVisible = false;
-    console.log('Modal fechado', this.isModalVisible); // Log para debug
   }
 
-  // Função para tratar a submissão do formulário de cadastro
+  showSuccessPopup(): void {
+    this.isSuccessPopupVisible = true;
+    setTimeout(() => {
+      this.isSuccessPopupVisible = false;
+    }, 3000); // Popup será exibido por 3 segundos
+  }
+
   onRegisterSubmit(event: Event): void {
     event.preventDefault(); // Prevenir comportamento padrão de submissão
     console.log('Formulário de cadastro enviado!');
-    this.closeRegisterModal();
+    this.isModalVisible = false;
+    this.showSuccessPopup(); // Mostrar popup de sucesso
+
+    // Limpar campos do formulário
+    const form = event.target as HTMLFormElement;
+    form.reset();
   }
 }

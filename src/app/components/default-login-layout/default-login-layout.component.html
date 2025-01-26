@@ -27,10 +27,14 @@
       </div>
       <div class="register-now">
         <p>Ainda não tem uma conta? <a href="#" (click)="openRegisterModal(); $event.preventDefault();">Registre-se agora</a></p>
-        <!-- O evento de clique chama a função openRegisterModal e previne o comportamento padrão -->
       </div>
     </form>
   </div>
+</div>
+
+<!-- Popup de sucesso -->
+<div *ngIf="isSuccessPopupVisible" class="success-popup">
+  Acessos criados com sucesso!
 </div>
 
 <!-- Modal de Cadastro -->
@@ -52,7 +56,6 @@
         <input type="password" placeholder="Senha">
       </div>
       <button type="submit">Registrar</button>
-      <!-- Formulário com evento de submit tratado para prevenir comportamento padrão -->
     </form>
   </div>
 </div>
