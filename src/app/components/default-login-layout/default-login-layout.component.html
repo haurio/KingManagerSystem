@@ -30,7 +30,8 @@
 
       <div class="register-now">
         <p>
-          Ainda não tem uma conta? <a href="#" (click)="openRegisterModal(); $event.preventDefault();">Registre-se agora</a>
+          Ainda não tem uma conta?
+          <a href="#" (click)="openRegisterModal(); $event.preventDefault();">Registre-se agora</a>
         </p>
       </div>
     </form>
@@ -55,23 +56,23 @@
     <form (submit)="onRegisterSubmit($event)">
       <div class="input-group">
         <i class="fas fa-user"></i>
-        <input type="text" placeholder="Nome de Usuário">
+        <input type="text" placeholder="Nome de Usuário" required />
       </div>
       <div class="input-group">
         <i class="fas fa-envelope"></i>
-        <input type="email" placeholder="Email">
+        <input type="email" placeholder="Email" required />
       </div>
       <div class="input-group">
         <i class="fas fa-lock"></i>
-        <input type="password" placeholder="Senha">
+        <input type="password" placeholder="Senha" required />
       </div>
       <div class="input-group">
         <i class="fas fa-store"></i>
-        <select>
+        <select required>
           <option value="" disabled selected>Selecione a Loja</option>
 
           <!-- Exibe 'Carregando lojas...' enquanto as lojas estão sendo carregadas -->
-          <option *ngIf="isLoading" disabled>Carregando lojas...</option>
+          <option *ngIf="isLoading && lojas.length === 0" disabled>Carregando lojas...</option>
 
           <!-- Exibe as lojas quando a lista for carregada -->
           <option *ngFor="let loja of lojas" [value]="loja">{{ loja }}</option>
@@ -79,7 +80,7 @@
       </div>
       <div class="input-group">
         <i class="fas fa-briefcase"></i>
-        <select>
+        <select required>
           <option value="" disabled selected>Selecione o Cargo</option>
           <option *ngFor="let cargo of cargos" [value]="cargo">{{ cargo }}</option>
         </select>
@@ -87,6 +88,7 @@
       <button type="submit">Registrar</button>
     </form>
   </div>
+</div>
 
 <footer>
   <p>&copy; {{ currentYear }} GRUPO ALVIM - ALVIM PARTICIPAÇÕES E INVESTIMENTOS S/A</p>

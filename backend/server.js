@@ -31,7 +31,17 @@ app.get('/empresas', async (req, res) => {
   }
 });
 
-// Resto das rotas...
+// Rota para buscar todos os cargos
+app.get('/cargos', async (req, res) => {
+  try {
+    const cargos = await Cargo.findAll({ attributes: ['nome_cargo'] }); // Busca apenas a coluna nome_cargo
+    res.json(cargos);
+  } catch (error) {
+    console.error('Erro ao buscar cargos:', error);
+    res.status(500).json({ error: 'Erro ao buscar cargos' });
+  }
+});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, async () => {

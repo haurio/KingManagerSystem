@@ -6,11 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LojaService {
-  private apiUrl = 'http://localhost:3000/empresas';  // Substitua pelo seu endpoint correto
+  private apiUrl = 'http://localhost:3000/empresas';  // Endpoint para as lojas
 
   constructor(private http: HttpClient) {}
 
-  getLojas(): Observable<any> {
-    return this.http.get<any[]>(this.apiUrl); // Supondo que a resposta seja um array de objetos
+  // Método para obter as lojas
+  getLojas(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 }

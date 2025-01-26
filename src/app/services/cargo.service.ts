@@ -6,11 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CargoService {
-  private apiUrl = 'http://localhost:3000/cargos';
+  private apiUrl = 'http://localhost:3000/cargos';  // Endpoint para os cargos
 
   constructor(private http: HttpClient) {}
 
-  getCargos(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+  // Método para obter os cargos
+  getCargos(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 }
