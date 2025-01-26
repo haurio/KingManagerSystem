@@ -4,27 +4,19 @@ const sequelize = require('../config/database');
 const Cargo = sequelize.define('Cargo', {
   id: {
     type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
   },
-  nome_cargo: {
+  nome: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  nivel_acesso: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
-  createdAt: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW
+  descricao: {
+    type: DataTypes.STRING
   }
 }, {
-  tableName: 'cargos'
+  tableName: 'cargos', // Nome da tabela pluralizada
+  timestamps: false
 });
 
 module.exports = Cargo;

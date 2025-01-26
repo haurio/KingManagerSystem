@@ -4,30 +4,20 @@ const sequelize = require('../config/database');
 const Cidade = sequelize.define('Cidade', {
   id: {
     type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
   },
-  nome_cidade: {
+  nome: {
     type: DataTypes.STRING,
     allowNull: false
   },
   estado_id: {
     type: DataTypes.INTEGER,
-    references: {
-      model: 'Estados',
-      key: 'id'
-    }
-  },
-  createdAt: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW
+    allowNull: false
   }
 }, {
-  tableName: 'cidades'
+  tableName: 'cidades', // Nome da tabela pluralizada
+  timestamps: false
 });
 
 module.exports = Cidade;

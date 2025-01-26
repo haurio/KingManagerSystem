@@ -4,10 +4,9 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [RouterOutlet], // Importa o roteador
+  template: `
+    <router-outlet></router-outlet>
+  `, // Renderiza o conteúdo da rota ativa
 })
-export class AppComponent {
-  title = 'KingManager';
-}
+export class AppComponent {}

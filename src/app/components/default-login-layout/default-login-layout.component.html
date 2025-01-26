@@ -1,4 +1,5 @@
 <div class="background-layer"></div>
+
 <div class="full-page-container">
   <div class="login-container">
     <div class="logo-container">
@@ -22,11 +23,15 @@
         </div>
       </div>
       <button type="submit">Login</button>
+
       <div class="forgot-password">
         <a href="#">Esqueceu a senha?</a>
       </div>
+
       <div class="register-now">
-        <p>Ainda não tem uma conta? <a href="#" (click)="openRegisterModal(); $event.preventDefault();">Registre-se agora</a></p>
+        <p>
+          Ainda não tem uma conta? <a href="#" (click)="openRegisterModal(); $event.preventDefault();">Registre-se agora</a>
+        </p>
       </div>
     </form>
 
@@ -34,6 +39,7 @@
     <div *ngIf="isSuccessPopupVisible" class="success-popup">
       Acessos criados com sucesso!
     </div>
+
     <!-- Mensagem de email já registrado -->
     <div *ngIf="isEmailRegisteredPopupVisible" class="email-registered-popup">
       Email já registrado! Por favor, faça o reset de sua senha.
@@ -63,6 +69,11 @@
         <i class="fas fa-store"></i>
         <select>
           <option value="" disabled selected>Selecione a Loja</option>
+
+          <!-- Exibe 'Carregando lojas...' enquanto as lojas estão sendo carregadas -->
+          <option *ngIf="isLoading" disabled>Carregando lojas...</option>
+
+          <!-- Exibe as lojas quando a lista for carregada -->
           <option *ngFor="let loja of lojas" [value]="loja">{{ loja }}</option>
         </select>
       </div>
@@ -76,7 +87,6 @@
       <button type="submit">Registrar</button>
     </form>
   </div>
-</div>
 
 <footer>
   <p>&copy; {{ currentYear }} GRUPO ALVIM - ALVIM PARTICIPAÇÕES E INVESTIMENTOS S/A</p>

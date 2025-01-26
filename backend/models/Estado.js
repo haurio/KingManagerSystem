@@ -4,27 +4,20 @@ const sequelize = require('../config/database');
 const Estado = sequelize.define('Estado', {
   id: {
     type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
   },
-  nome_estado: {
+  nome: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  sigla_estado: {
+  sigla: {
     type: DataTypes.STRING,
     allowNull: false
-  },
-  createdAt: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW
   }
 }, {
-  tableName: 'estados'
+  tableName: 'estados', // Nome da tabela pluralizada
+  timestamps: false
 });
 
 module.exports = Estado;

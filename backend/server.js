@@ -1,32 +1,37 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');  // Importe o cors
 const sequelize = require('./config/database');
+
+// Importando os modelos
+const Empresa = require('./models/Empresa');
+const Cargo = require('./models/Cargo');
+const Cidade = require('./models/Cidade');
+const Estado = require('./models/Estado');
 const User = require('./models/User');
 
 const app = express();
+
+// Use o CORS antes de qualquer rota
+app.use(cors());  // Permite requisições de qualquer origem. Pode ser configurado conforme necessário
+
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.send('Servidor funcionando!');
 });
 
-app.get('/users', async (req, res) => {
+// Exemplo de rota para buscar todas as empresas
+app.get('/empresas', async (req, res) => {
   try {
-    const users = await User.findAll();
-    res.json(users);
+    const empresas = await Empresa.findAll();
+    res.json(empresas);
   } catch (error) {
-    res.status(500).json({ error: 'Erro ao buscar usuários' });
+    res.status(500).json({ error: 'Erro ao buscar empresas' });
   }
 });
 
-app.post('/users', async (req, res) => {
-  try {
-    const user = await User.create(req.body);
-    res.status(201).json(user);
-  } catch (error) {
-    res.status(500).json({ error: 'Erro ao criar usuário' });
-  }
-});
+// Resto das rotas...
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, async () => {
@@ -34,7 +39,7 @@ app.listen(PORT, async () => {
 
   try {
     await sequelize.authenticate();
-    await sequelize.sync({ alter: true });
+    await sequelize.sync({ force: false }); // Use force: false para não apagar dados
     console.log('Conexão com o banco de dados estabelecida com sucesso!');
   } catch (error) {
     console.error('Não foi possível conectar ao banco de dados:', error);
