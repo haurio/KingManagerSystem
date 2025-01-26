@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+/* Resetando o margin e padding do body e html */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Impede qualquer barra de rolagem indesejada */
+}
+
+/* Aplicando a imagem de fundo no corpo da página */
+body {
+  background: url('assets/images/background1.jpg') ;
+  background-size: cover; /* A imagem de fundo vai cobrir toda a tela */
+  height: 100%;  /* Garante que o fundo cobre 100% da altura da tela */
+  display: flex;
+  justify-content: center;
+  align-items: center;  /* Centraliza o conteúdo dentro da página */
+}
+footer {
+  position: fixed; /* Fixa o footer na parte inferior da página */
+  bottom: 0;
+  left: 0;
+  width: 100%; /* O footer ocupa toda a largura da tela */
+  text-align: center; /* Centraliza o texto dentro do footer */
+  padding: 10px; /* Espaçamento interno */
+  background-color: rgba(0, 0, 0, 0.15); /* Fundo preto com 15% de opacidade */
+  font-size: 12px; /* Tamanho da fonte no footer */
+}
+
+footer p {
+  margin: 0; /* Remove a margem do parágrafo */
+  color: rgba(255, 255, 255, 0.8); /* Cor branca com 80% de opacidade */
+}
+
