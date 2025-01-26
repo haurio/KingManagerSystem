@@ -1,0 +1,270 @@
+/* ============================
+   SEÇÃO DE BACKGROUND (CAMADA DE FUNDO)
+   ============================ */
+
+/* Estilo para a camada de fundo */
+.background-layer {
+  position: fixed; /* Fixa a camada de fundo para cobrir toda a tela */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/background1.jpg'); /* Caminho para a imagem de fundo */
+  background-size: cover; /* Cobre toda a área da tela */
+  background-position: center; /* Centraliza a imagem */
+  z-index: -1; /* Coloca a camada de fundo atrás de outros elementos */
+}
+
+/* ============================
+   SEÇÃO DE FORMULÁRIO DE LOGIN
+   ============================ */
+
+/* Centralização do container de login */
+.login-container {
+  position: absolute; /* Posicionamento absoluto para centralizar */
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste final para centralizar o formulário */
+  background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+  padding: 1.5rem; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  max-width: 400px; /* Largura máxima do formulário */
+  width: 100%; /* Largura responsiva */
+  text-align: center; /* Alinha o conteúdo do formulário no centro */
+}
+
+/* ============================
+   SEÇÃO DE TITULO E SUBTITULO
+   ============================ */
+
+/* Título do formulário */
+h1 {
+  margin-bottom: 0.3rem; /* Espaçamento pequeno abaixo do título */
+  font-size: 1.7rem; /* Tamanho de fonte ajustado */
+  color: #333; /* Cor escura */
+  font-weight: 600; /* Peso da fonte */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  background: linear-gradient(to right, #007bff, #00d4ff); /* Gradiente de azul */
+  -webkit-background-clip: text; /* Faz o fundo afetar o texto */
+  color: transparent; /* Torna o texto transparente */
+}
+
+/* Subtítulo do formulário */
+.subtitle {
+  margin-bottom: 20px; /* Espaço entre o subtítulo e os campos */
+  font-size: 1rem; /* Tamanho de fonte ajustado */
+  color: #555; /* Cor suave */
+  font-weight: 500; /* Peso da fonte */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background: linear-gradient(to right, #007bff, #00d4ff); /* Gradiente de azul */
+  -webkit-background-clip: text; /* Faz o fundo afetar o texto */
+  color: transparent; /* Torna o texto transparente */
+}
+
+/* Mudança de cor e sombra quando o mouse passa sobre o título e subtítulo */
+h1:hover, .subtitle:hover {
+  color: #007bff; /* Cor azul ao passar o mouse */
+  text-shadow: 1px 1px 4px rgba(0, 123, 255, 0.5); /* Aumenta a sombra no hover */
+}
+
+/* ============================
+   SEÇÃO DE CAMPOS DE FORMULÁRIO
+   ============================ */
+
+/* Estilo para os campos de input */
+.form-group {
+  margin-bottom: 2px; /* Distância entre os campos de 2px */
+}
+
+/* Estilo para os ícones dentro dos campos */
+.input-icon {
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 12px; /* Posiciona o ícone à esquerda */
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Ajuste para centralizar o ícone */
+  color: #ccc; /* Cor do ícone */
+  font-size: 1.3rem; /* Tamanho do ícone */
+}
+
+/* Estilo geral para os campos de input */
+input {
+  width: 100%; /* Largura 100% para o campo */
+  padding: 0.8rem 1.2rem 0.8rem 3rem; /* Padding com espaço para o ícone */
+  margin: 0.5rem 0; /* Espaçamento entre os campos */
+  border-radius: 6px; /* Bordas arredondadas */
+  border: 1px solid #ccc; /* Borda cinza clara */
+  font-size: 1.1rem; /* Tamanho da fonte */
+  box-sizing: border-box; /* Inclui o padding nas dimensões do campo */
+  background-color: #f9f9f9; /* Cor de fundo do campo */
+  transition: all 0.3s ease; /* Transição suave para o foco */
+}
+
+/* Estilo do placeholder */
+input::placeholder {
+  color: #aaa; /* Cor do placeholder */
+}
+
+/* Estilo para o campo de input ao receber foco */
+input:focus {
+  border-color: #007bff; /* Cor da borda ao focar */
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.5); /* Sombra azul ao focar */
+}
+
+/* ============================
+   SEÇÃO DE BOTÃO
+   ============================ */
+
+/* Estilo para o botão */
+button {
+  width: 100%; /* Largura 100% para o botão */
+  padding: 0.8rem; /* Padding do botão */
+  background-color: #007bff; /* Cor de fundo azul */
+  color: white; /* Cor do texto */
+  border: none; /* Remove borda */
+  border-radius: 6px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de pointer para o botão */
+  font-size: 1.1rem; /* Tamanho da fonte */
+  margin-top: 1rem; /* Espaço superior */
+  transition: background-color 0.3s ease; /* Transição para a mudança de cor */
+}
+
+/* Estilo para o botão ao passar o mouse */
+button:hover {
+  background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+}
+
+/* ============================
+   SEÇÃO DE LINKS
+   ============================ */
+
+/* Estilo para o link de "Esqueci minha senha" */
+.forgot-password {
+  margin-top: 1.5rem; /* Espaço superior */
+}
+
+.forgot-password a {
+  color: #007bff; /* Cor azul do link */
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+/* Estilo para o link de "Esqueci minha senha" ao passar o mouse */
+.forgot-password a:hover {
+  text-decoration: underline; /* Sublinha o link no hover */
+}
+
+/* Estilo para o link de "Registrar agora" */
+.register-now {
+  margin-top: 1.5rem; /* Espaço superior */
+}
+
+.register-now p {
+  font-size: 0.95rem; /* Tamanho de fonte ajustado */
+  color: #333; /* Cor escura */
+}
+
+.register-now a {
+  color: #007bff; /* Cor azul do link */
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+/* Estilo para o link de "Registrar agora" ao passar o mouse */
+.register-now a:hover {
+  text-decoration: underline; /* Sublinha o link no hover */
+}
+
+/* ============================
+   SEÇÃO DE RESPONSIVIDADE
+   ============================ */
+
+/* Responsividade para telas menores que 768px */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 1.2rem; /* Ajuste no padding */
+    max-width: 90%; /* Largura ajustada para telas menores */
+  }
+
+  h1 {
+    font-size: 1.6rem; /* Tamanho de fonte ajustado para o título */
+  }
+
+  .subtitle {
+    font-size: 1rem; /* Tamanho de fonte ajustado para o subtítulo */
+  }
+
+  input {
+    padding: 0.9rem; /* Ajuste no padding do input */
+    font-size: 1.1rem; /* Tamanho de fonte ajustado para os inputs */
+  }
+
+  button {
+    padding: 1rem; /* Ajuste no padding do botão */
+    font-size: 1.1rem; /* Tamanho de fonte ajustado para o botão */
+  }
+}
+
+/* Responsividade para telas menores que 480px */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 1rem; /* Ajuste no padding do formulário */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Tamanho de fonte ajustado para o título */
+  }
+
+  .subtitle {
+    font-size: 1rem; /* Tamanho de fonte ajustado para o subtítulo */
+  }
+
+  input {
+    padding: 0.8rem; /* Ajuste no padding dos inputs */
+    font-size: 1rem; /* Tamanho de fonte ajustado para os inputs */
+  }
+
+  button {
+    padding: 0.9rem; /* Ajuste no padding do botão */
+    font-size: 1.1rem; /* Tamanho de fonte ajustado para o botão */
+  }
+}
+
+/* ============================
+   SEÇÃO DE LOGO
+   ============================ */
+
+/* Estilo para o logo */
+.logo-container {
+  text-align: center;
+  margin-bottom: 1rem; /* Espaço abaixo do logo */
+}
+
+.logo {
+  width: 160px; /* Largura ajustada do logo */
+  height: auto; /* Mantém a proporção do logo */
+}
+
+/* ============================
+   SEÇÃO DE FOOTER
+   ============================ */
+
+/* Estilo para o footer */
+footer {
+  position: fixed; /* Fixa o footer na parte inferior */
+  bottom: 0;
+  left: 0;
+  width: 100%; /* O footer ocupa toda a largura */
+  text-align: center; /* Centraliza o conteúdo */
+  padding: 10px; /* Espaçamento interno */
+  background-color: rgba(0, 0, 0, 0.15); /* Fundo preto com opacidade */
+  font-size: 12px; /* Tamanho de fonte pequeno */
+}
+
+/* Estilo para o texto dentro do footer */
+footer p {
+  margin: 0; /* Remove margem */
+  color: rgba(255, 255, 255, 0.8); /* Cor do texto com opacidade */
+}
