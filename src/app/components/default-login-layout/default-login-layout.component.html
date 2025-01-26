@@ -29,12 +29,16 @@
         <p>Ainda não tem uma conta? <a href="#" (click)="openRegisterModal(); $event.preventDefault();">Registre-se agora</a></p>
       </div>
     </form>
-  </div>
-</div>
 
-<!-- Popup de sucesso -->
-<div *ngIf="isSuccessPopupVisible" class="success-popup">
-  Acessos criados com sucesso!
+    <!-- Mensagem de sucesso -->
+    <div *ngIf="isSuccessPopupVisible" class="success-popup">
+      Acessos criados com sucesso!
+    </div>
+    <!-- Mensagem de email já registrado -->
+    <div *ngIf="isEmailRegisteredPopupVisible" class="email-registered-popup">
+      Email já registrado! Por favor, faça o reset de sua senha.
+    </div>
+  </div>
 </div>
 
 <!-- Modal de Cadastro -->
@@ -54,6 +58,20 @@
       <div class="input-group">
         <i class="fas fa-lock"></i>
         <input type="password" placeholder="Senha">
+      </div>
+      <div class="input-group">
+        <i class="fas fa-store"></i>
+        <select>
+          <option value="" disabled selected>Selecione a Loja</option>
+          <option *ngFor="let loja of lojas" [value]="loja">{{ loja }}</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <i class="fas fa-briefcase"></i>
+        <select>
+          <option value="" disabled selected>Selecione o Cargo</option>
+          <option *ngFor="let cargo of cargos" [value]="cargo">{{ cargo }}</option>
+        </select>
       </div>
       <button type="submit">Registrar</button>
     </form>
